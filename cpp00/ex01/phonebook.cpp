@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:30:00 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/02 17:30:01 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/15 19:06:45 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,18 +92,22 @@ void PhoneBook::search()
             << completName(contact.LastName) << spaces(completName(contact.LastName)) << " | " 
             << completName(contact.NickName) <<std::endl;
     }
-    line = get_string("Enter Contact Index: \n> ");
-    id = std::atoi(line.c_str());
-    while (id > 8 || id <= 0 || this->NumberOfContacts < id)
+    if (this->NumberOfContacts > 0)
     {
-        std::cout << "The Intered Index is Not Valid\n";
         line = get_string("Enter Contact Index: \n> ");
-        id = std::atoi(line.c_str());
+        id = atoi(line.c_str());
+        while (id > 8 || id <= 0 || this->NumberOfContacts < id)
+        {
+            std::cout << "The Intered Index is Not Valid\n";
+            line = get_string("Enter Contact Index: \n> ");
+            id = atoi(line.c_str());
+        }
+        PhoneBook::GetContact(id);
     }
-    PhoneBook::GetContact(id);
-
 
 }
+
+// ! ig there is an error in indexing after add
 
 void PhoneBook::add()
 {

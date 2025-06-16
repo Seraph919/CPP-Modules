@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:29:55 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/05 09:38:13 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/15 18:09:10 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void WelcomingMessage()
 
 int main(int ac, char **av)
 {
+    (void) av;
     if (ac != 1)
         return (std::cout << "You need only ./phonebook to run the program\n", ERROR);
     std::string input;

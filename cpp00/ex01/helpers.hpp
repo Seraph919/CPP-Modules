@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:18:52 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/02 17:19:54 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/15 18:10:34 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "phonebook.hpp"
 #include "contact.hpp"
+#include <cstdlib>
 
 std::string get_string(std::string prompt);
 std::string completName(std::string line);

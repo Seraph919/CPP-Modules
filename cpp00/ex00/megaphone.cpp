@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:29:39 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/02 17:29:40 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/15 18:08:14 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 std::string ToUpper(std::string str)
 {
-    for (int i = 0; i < str.length(); i++)
+    for (size_t i = 0; i < str.length(); i++)
         str[i] = std::toupper(str[i]);
     return (str);
 }
