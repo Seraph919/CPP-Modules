@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:46:24 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/02 20:32:54 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:45:44 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int main()
     std::cout << "Zombie1 :\n";
     
     {
-    Zombie zombie1;
-    zombie1.set_name("STACK");
+    Zombie zombie1("STACK");
+    // zombie1.set_name("STACK");
     zombie1.announce();
     }
     

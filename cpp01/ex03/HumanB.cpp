@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 09:22:19 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/04 10:36:04 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/17 15:24:55 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // }
 
 HumanB::HumanB(std::string name) : name(name){
-    this->weapon = nullptr;
+    this->weapon = NULL;
     std::cout << "HumanB " << this->name << " has been created!\n";
 }
 

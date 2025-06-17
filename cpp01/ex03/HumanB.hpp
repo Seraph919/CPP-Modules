@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 09:22:21 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/04 10:32:23 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/17 15:24:26 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 
 class HumanB {
+private:
+    std::string name;
 public:
     HumanB(std::string name);
-    // HumanB(std::string name);
     Weapon *weapon;
-    std::string name;
     void setWeapon(Weapon &type);
     void attack();
     ~HumanB();

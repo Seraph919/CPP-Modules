@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 08:57:43 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/03 09:18:01 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:58:31 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 int main()
 {
     std::string str =  "HI THIS IS BRAIN";
-    std::cout << "The Str is: \"" << str << "\" ";
-    std::cout << "Located in: " << &str << "\n\n";
+    std::string *stringPTR = &str;
+    std::string &stringREF = str;
+
     
-    std::string *ptr = &str;
-    std::cout << "The Value Held By ptr: \"" << *ptr << "\" ";
-    std::cout << "Located in: " << ptr << "\n\n";
+    std::cout << "String Located in: " << &str << "\n";
+    std::cout << "Pointer points to: " << stringPTR << "\n";
+    std::cout << "Actual pointer adress: " << &stringPTR << "\n";
+    std::cout << "Refrence Located in: " << &stringREF << "\n\n";   
     
-    std::string &ref = str;
-    std::cout << "The Reference Value is : " << ref << "\" ";
-    std::cout << "Located in: " << &ref << '\n';   
+    std::cout << "The Str is: \"" << str << "\" \n";
+    std::cout << "The Value Held By ptr: \"" << *stringPTR << "\" \n";
+    std::cout << "The Reference Value is : " << stringREF << "\" \n";
 }

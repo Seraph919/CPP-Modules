@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:46:34 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/02 20:35:04 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:48:26 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public :
     void set_name(std::string _name);
     
     Zombie();
+    Zombie(std::string _name);
     ~Zombie();
 };
 

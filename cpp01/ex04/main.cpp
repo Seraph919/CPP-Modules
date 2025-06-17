@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:33:17 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/04 19:13:33 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/17 15:43:17 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,18 @@ int main(int ac, char **av)
 
     std::ofstream returned(filename.c_str());
     
-    // created.write(lines.c_str(), lines.length());
-    std::string keyword = av[3];
+    std::string keyword = av[2];
+    std::string replace_keyword = av[3];
     while (lines.find(av[2]) != std::string::npos) // std::string::npos == MAX_SIZE_t (is returned by string functions in error)
     {
         // std::cout << lines << std::endl;
         int pos = lines.find(av[2]);
         lines.erase(pos, keyword.length());
-        for (size_t i = 0; i < keyword.length(); i++)
+        for (size_t i = 0; i < replace_keyword.length(); i++)
             lines.insert(pos++, 1, av[3][i]);
             
     }
-    std::cout << lines << std::endl;
+    // std::cout << lines << std::endl;
     returned << lines;
     file.close();
     return 0;
