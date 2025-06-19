@@ -6,11 +6,13 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:08:34 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:08:35 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:48:29 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::fract = 8;
 
 Fixed::Fixed() : raw(0)
 {

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:09:21 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:09:22 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:50:58 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ float power(int x, int pow)
 
 
 
-
+const int Fixed::fractionalBits = 8;
 
 Fixed::Fixed() : raw(0)
 {

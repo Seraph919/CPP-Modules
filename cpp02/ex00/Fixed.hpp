@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:08:39 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:08:40 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:37:56 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Fixed{
 	private:
 		int raw;
-		static const int fract = 8;
+		static const int fract;
 	public:
 		Fixed();
 		Fixed(Fixed &copied);

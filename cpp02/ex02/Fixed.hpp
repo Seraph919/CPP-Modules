@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:09:27 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:09:28 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/19 16:50:40 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Fixed{
 	private:
 		int raw;
-		static const int fractionalBits = 8;
+		static const int fractionalBits;
 	public:
 		Fixed();
 		Fixed& operator=(const Fixed &copied);
