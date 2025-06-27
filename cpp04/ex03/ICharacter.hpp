@@ -6,14 +6,14 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:50 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:12:51 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/27 20:12:16 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include "AMateria.hpp"
+class AMateria;
 #include <iostream>
 
 class ICharacter

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:30:09 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/16 17:39:14 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:39:32 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
-
-using namespace std;
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -36,7 +34,7 @@ Account::Account( int initial_deposit )
     _nbWithdrawals = 0;
     
     _displayTimestamp();
-    cout <<" index:"<< "\033[34m" <<index<< "\033[0m"
+    std::cout <<" index:"<< "\033[34m" <<index<< "\033[0m"
         <<";amount:"<< "\033[34m" <<initial_deposit
         << "\033[0m"<<";created\n";
 }
@@ -79,11 +77,11 @@ void	Account::displayAccountsInfos( void )
 {
 
     _displayTimestamp();
-    cout << " accounts:"<< "\033[34m" <<_nbAccounts
+    std::cout << " accounts:"<< "\033[34m" <<_nbAccounts
         << "\033[0m"<<";total:"<< "\033[34m" <<_totalAmount
         << "\033[0m"<<";deposits:"<< "\033[34m" <<_totalNbDeposits
         << "\033[0m"<<";withdrawals:"<< "\033[34m" <<_totalNbWithdrawals
-        << "\033[0m"<<endl;
+        << "\033[0m"<<std::endl;
 }
 
 
@@ -92,11 +90,11 @@ void	Account::makeDeposit( int deposit ){
     _totalNbDeposits++;
 
     _displayTimestamp();
-    cout << " index:"<< "\033[34m" <<_accountIndex<< "\033[0m"<<";p_amount:"
+    std::cout << " index:"<< "\033[34m" <<_accountIndex<< "\033[0m"<<";p_amount:"
         << "\033[34m" <<_amount<< "\033[0m"<<";deposit:"
         << "\033[34m" <<deposit<< "\033[0m"<<";amount:"<< "\033[34m" 
         <<_amount + deposit<< "\033[0m"<<";nb_deposits:"<< "\033[34m" 
-        <<_nbDeposits<<"\033[0m"<<endl;
+        <<_nbDeposits<<"\033[0m"<<std::endl;
 
     _amount += deposit;
     _totalAmount += deposit;
@@ -109,11 +107,11 @@ bool	Account::makeWithdrawal( int withdrawal )
         _totalNbWithdrawals++;
         _nbWithdrawals++;
         _displayTimestamp();
-        cout << " index:"<< "\033[34m" <<_accountIndex
+        std::cout << " index:"<< "\033[34m" <<_accountIndex
             << "\033[0m"<<";p_amount:"<< "\033[34m" <<_amount<< "\033[0m"
             <<";withdrawal:"<< "\033[34m" <<withdrawal<< "\033[0m"<<";amount:"
             << "\033[34m"<<_amount - withdrawal<< "\033[0m"<<";nb_withdrawals:"
-            << "\033[34m"<<_nbWithdrawals<<"\033[0m"<<endl;
+            << "\033[34m"<<_nbWithdrawals<<"\033[0m"<<std::endl;
 
         _amount -= withdrawal;
         _totalAmount -= withdrawal;
@@ -121,7 +119,7 @@ bool	Account::makeWithdrawal( int withdrawal )
     }
     // [19920104_091532] index:5;p_amount:23;withdrawal:refused
     _displayTimestamp();
-    cout << " index:"<< "\033[34m" <<_accountIndex
+    std::cout << " index:"<< "\033[34m" <<_accountIndex
         << "\033[0m"<<";p_amount:"<< "\033[34m" <<_amount
         << "\033[0m"<<";withdrawal:refused\n";
     return false;
@@ -131,9 +129,9 @@ bool	Account::makeWithdrawal( int withdrawal )
 void	Account::displayStatus( void ) const
 {
     _displayTimestamp();
-    cout << " index:"<< "\033[34m" <<_accountIndex<< "\033[0m"<<";amount:"
+    std::cout << " index:"<< "\033[34m" <<_accountIndex<< "\033[0m"<<";amount:"
         << "\033[34m" <<_amount<< "\033[0m"<<";desposits:"<< "\033[34m" <<_nbDeposits
-        <<  "\033[0m"<<";withdrawals:"<< "\033[34m" <<_nbWithdrawals<< "\033[0m"<<endl;
+        <<  "\033[0m"<<";withdrawals:"<< "\033[34m" <<_nbWithdrawals<< "\033[0m"<<std::endl;
 }
 
 
@@ -145,6 +143,6 @@ int		Account::checkAmount( void ) const
 Account::~Account( void )
 {
     _displayTimestamp();
-    cout <<" index:"<< "\033[34m" <<_accountIndex << "\033[0m"
+    std::cout <<" index:"<< "\033[34m" <<_accountIndex << "\033[0m"
         <<";amount:"<< "\033[34m" <<_amount<< "\033[0m"<<";closed\n";    
 }

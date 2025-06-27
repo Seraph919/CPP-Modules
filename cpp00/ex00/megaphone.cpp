@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:29:39 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 18:08:14 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 16:14:42 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,33 @@
     $>./megaphone
     * LOUD AND UNBEARABLE FEEDBACK NOISE *
     $>
+
+    functions inside structs in C:
+    typedef struct client_t client_t, *pno;
+    struct client_t
+    {
+        pid_t pid;
+        char password[TAM_MAX]; // -> 50 chars
+        pno next;
+
+        pno (*AddClient)(client_t *); 
+    };
+
+    pno client_t_AddClient(client_t *self) { // code ..}
+
+    int main()
+    {
+
+        client_t client;
+        client.AddClient = client_t_AddClient; // probably really done in some init fn
+
+        //code ..
+
+        client.AddClient(&client);
+
+    }
 */
+
 
 std::string ToUpper(std::string str)
 {

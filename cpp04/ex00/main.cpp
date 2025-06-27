@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:20 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:10:21 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:33:23 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main()
 {
-    cout << "Normal Tests:\n";
+   std::cout << "Normal Tests:\n";
     {
         const Animal* meta = new Animal();
         const Animal* j = new Dog();
@@ -31,7 +31,7 @@ int main()
         meta->makeSound();
     }
     // wrong stuff
-    cout << "\nWrongCat Test:\n";
+    std::cout << "\nWrongCat Test:\n";
     {
         const WrongAnimal* meta = new WrongAnimal();
         const WrongAnimal* i = new WrongCat();

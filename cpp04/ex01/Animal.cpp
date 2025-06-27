@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:42 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:10:43 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:34:02 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Animal::Animal() : Type("Animal")
 {
-    cout <<  Type << " default constructor called\n";
+    std::cout <<  Type << " default constructor called\n";
 }
 
 Animal::Animal(string _Type) : Type(_Type)
 {
-    cout <<  Type << " Paramitrized constructor called\n";
+    std::cout <<  Type << " Paramitrized constructor called\n";
 }
 
 Animal::Animal(Animal &copy)
 {
     this->Type = copy.Type;
-    cout << Type << " Copy constructor called\n";
+    std::cout << Type << " Copy constructor called\n";
 }
 
 Animal &Animal::operator=(const Animal &other)
@@ -33,14 +33,14 @@ Animal &Animal::operator=(const Animal &other)
     if (this != &other)
     {
         this->Type = other.Type;
-        cout << Type << " Assignment operator called\n";
+        std::cout << Type << " Assignment operator called\n";
     }
     return *this;
 }
 
 void Animal::makeSound() const
 {
-    cout << Type << " Sound\n";
+    std::cout << Type << " Sound\n";
 }
 
 void Animal::setType(string _Type)
@@ -55,5 +55,5 @@ string Animal::getType() const
 
 Animal::~Animal()
 {
-    cout <<  Type << " Distructor called\n";
+    std::cout <<  Type << " Distructor called\n";
 }

@@ -6,15 +6,13 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:19:22 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/09 20:16:08 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:32:33 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-
-using namespace  std;
 
 int main()
 {
@@ -24,7 +22,7 @@ int main()
     A.beRepaired(2);
     A.PrintHealth();
 
-    cout << "\n\nDerived\n\n";
+    std::cout << "\n\nDerived\n\n";
     {
     ScavTrap B("Ayoub2");
     B.attack("Evaluator");
@@ -34,7 +32,7 @@ int main()
     B.beRepaired(1000);
     B.PrintHealth();    
     }
-    cout << "\n\nDerived\n\n";
+    std::cout << "\n\nDerived\n\n";
 
     FragTrap C("Ayoub3");
     C.attack("Evaluator");

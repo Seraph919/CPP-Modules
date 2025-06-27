@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:29 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:10:30 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:35:03 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define WRONGANIMAL_HPP
 
 #include <iostream>
-using namespace std;
+ 
 
 class WrongAnimal
 {

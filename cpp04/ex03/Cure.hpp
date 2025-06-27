@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:38 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:12:39 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/27 20:19:00 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@
 
 class Cure : public AMateria
 {
+private:
+
 public:
-    Cure() : AMateria("cure"){std::cout << "Default Cure Constuctor Called\n";};
-    ~Cure(){std::cout << "Cure Destructor Called\n";};
+    Cure();
+    Cure* clone() const;
+    std::string const & getType() const; 
+    void use(ICharacter& target);
+    ~Cure();
 };
 
 #endif

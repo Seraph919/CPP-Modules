@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 17:19:27 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/09 17:19:28 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:43:28 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ ClapTrap::ClapTrap() : Name("Default"), HitPoints(10), EnergyPoints(10), TakeDam
     std::cout << "default constructor has been called\n";
 }
 
-ClapTrap::ClapTrap(std::string Name, unsigned int hp, unsigned int ep, unsigned int td)
+ClapTrap::ClapTrap(std::string _Name, unsigned int hp, unsigned int ep, unsigned int td)
 {
     std::cout << "default constructor has been called\n";
-    Name = Name;
+    Name = _Name;
     HitPoints = hp;
     EnergyPoints = ep;
     TakeDamage = td;

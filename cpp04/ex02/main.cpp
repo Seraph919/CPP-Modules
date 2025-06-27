@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:21 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:12:22 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:34:25 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main()
 {
-    cout << "Normal Tests:\n";
+    std::cout << "Normal Tests:\n";
     {
         // * You cannot create objects of an abstract class directly.
         // const Animal* meta = new Animal();

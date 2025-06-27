@@ -5,17 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/15 17:12:28 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:12:29 by asoudani         ###   ########.fr       */
+/*   Created: 2025/06/27 16:16:36 by asoudani          #+#    #+#             */
+/*   Updated: 2025/06/27 20:13:39 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
+// class AMateria
+// {
+// protected:
+//     std::string Type;
+// public:
+//     AMateria(std::string const & type);
+
+//     std::string const & getType() const; 
+//     virtual AMateria* clone() const = 0;
+//     virtual void use(ICharacter& target);
+// };
+
+AMateria::AMateria() : Type("default")
+{
+    
+}
 
 AMateria::AMateria(std::string const & type)
 {
     Type = type;
-    std::cout << "Paramitized Constructor Called\n";
 }
 
 std::string const &AMateria::getType() const
@@ -23,11 +39,14 @@ std::string const &AMateria::getType() const
     return Type;
 }
 
-AMateria* AMateria::clone() const
-{
-    return (NULL);
-}
-
 void AMateria::use(ICharacter& target)
 {
+    std::cout << "Materia used on " << target.getName() << "\n";
+}
+
+AMateria* AMateria::clone() const
+{
+    // std::string temp = this->Type;
+    // AMateria *newMat = new AMateria(temp); 
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:17 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:12:18 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:35:03 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-using namespace std;
+ 
 
 class Dog : public Animal
 {
