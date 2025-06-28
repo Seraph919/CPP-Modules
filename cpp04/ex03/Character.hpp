@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:22:57 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/27 20:11:50 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 04:05:38 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public :
     void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter& target);
-    // ~Character();
+    ~Character();
 };
 
 #endif

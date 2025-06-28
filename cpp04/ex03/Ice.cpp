@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:11:49 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/27 20:11:18 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 03:55:32 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Ice::Ice() : AMateria("ice")
 {
-    std::cout << "Default Ice Constuctor Called\n";
+    // std::cout << "Default Ice Constuctor Called\n";
 }
 
 Ice* Ice::clone() const
@@ -37,5 +37,5 @@ void Ice::use(ICharacter& target)
 
 Ice::~Ice()
 {
-    std::cout << "Ice Destructor Called\n";
+    // delete this;
 }

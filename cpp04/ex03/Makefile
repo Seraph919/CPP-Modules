@@ -1,7 +1,7 @@
 NAME = exec
 SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp MateriaSource.cpp
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror -g3
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)

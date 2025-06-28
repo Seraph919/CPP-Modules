@@ -12,8 +12,10 @@ void MateriaSource::learnMateria(AMateria* m)
 {
     static int i = 0;
     if (i < 4)
+    {
         materias[i] = m;
-    i++;
+        i++;
+    }
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
@@ -32,5 +34,9 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 
 MateriaSource::~MateriaSource()
 {
-
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     // if (materias[i] != NULL)
+    //         // delete materias[i];
+    // }
 }

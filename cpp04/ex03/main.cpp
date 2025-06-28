@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:56 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/27 20:01:12 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 05:22:11 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ TODO:  Character
 TODO:  Implements ICharacter
 TODO:  Has an inventory of 4 materia slots
 TODO:  Can equip, unequip, and use materias
-TODO:  Requires deep copying in copy constructor and assignment operator
+!TODO:  Requires deep copying in copy constructor and assignment operator
 
 TODO:  MateriaSource
 TODO:  Implements IMateriaSource
@@ -83,7 +83,7 @@ TODO:  Step 4: Memory Management
 TODO:  Pay special attention to:
 
 TODO:  Proper deletion of dynamically allocated materias
-TODO:  Deep copying in copy constructors and assignment operators
+!TODO:  Deep copying in copy constructors and assignment operators
 TODO:  Handling unequipped materias (to avoid memory leaks)
 TODO:  Step 5: Implementation Flow
 TODO:  I suggest this order:

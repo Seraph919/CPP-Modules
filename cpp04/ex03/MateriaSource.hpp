@@ -6,14 +6,15 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:51:43 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/27 19:51:04 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 03:43:49 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
-#include "headers.hpp"
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
 class MateriaSource : public IMateriaSource
 {

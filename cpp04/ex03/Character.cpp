@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 20:12:46 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/27 20:12:50 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 04:25:15 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,13 @@ void Character::use(int idx, ICharacter& target)
 {
     if (idx >= 0 && idx < 4)
         materias[idx]->use(target);
+}
+
+Character::~Character()
+{
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     if (materias[i] != NULL)
+    //         // delete materias[i];
+    // }
 }
