@@ -50,9 +50,9 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 
 MateriaSource::~MateriaSource()
 {
-    // for (int i = 0; i < 4; i++)
-    // {
-    //     // if (materias[i] != NULL)
-    //         // delete materias[i];
-    // }
+    for (int i = 0; i < 4; i++)
+    {
+        if (materias[i] != NULL)
+            delete materias[i];
+    }
 }

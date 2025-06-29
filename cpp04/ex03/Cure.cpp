@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:06:39 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 06:58:13 by seraph           ###   ########.fr       */
+/*   Updated: 2025/06/29 02:46:06 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,21 @@ Cure::Cure() : AMateria("cure")
 
 Cure::Cure(std::string name)
 {
+    (void) name;
     Type = "cure";
 }
 
 Cure::Cure(Cure const &copy)
 {
-    if (this != &copy)
-    {
-        this->Type = copy.getType();
-    }
+    this->Type = copy.getType();
 }
 
 Cure &Cure::operator=(Cure const &copy)
 {
-    this->Type = copy.getType();
+    if (this != &copy)
+    {
+        this->Type = copy.getType();
+    }
     return *this;
 }
 
@@ -59,5 +60,6 @@ void Cure::use(ICharacter& target)
 
 Cure::~Cure()
 {
-    std::cout << "Cure Destructor Called\n";
+
+    // std::cout << "Cure Destructor Called\n";
 }

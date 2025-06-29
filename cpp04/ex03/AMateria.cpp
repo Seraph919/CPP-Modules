@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:16:36 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 06:38:10 by seraph           ###   ########.fr       */
+/*   Updated: 2025/06/29 02:42:22 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,9 @@ AMateria* AMateria::clone() const
     // std::string temp = this->Type;
     // AMateria *newMat = new AMateria(temp); 
     return 0;
+}
+
+AMateria::~AMateria()
+{
+    
 }

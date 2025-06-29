@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:11:49 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 06:59:49 by seraph           ###   ########.fr       */
+/*   Updated: 2025/06/29 02:43:18 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ std::string const &Ice::getType() const
 
 Ice::Ice(std::string name)
 {
+    (void) name;
     Type = "ice";
 }
 

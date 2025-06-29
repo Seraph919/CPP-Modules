@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 20:12:46 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 06:51:41 by seraph           ###   ########.fr       */
+/*   Updated: 2025/06/29 02:45:04 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ void Character::use(int idx, ICharacter& target)
 
 Character::~Character()
 {
-    // for (int i = 0; i < 4; i++)
-    // {
-    //     if (materias[i] != NULL)
-    //         // delete materias[i];
-    // }
+    for (int i = 0; i < 4; i++)
+    {
+        if (materias[i] != NULL)
+            delete materias[i];
+    }
 }
