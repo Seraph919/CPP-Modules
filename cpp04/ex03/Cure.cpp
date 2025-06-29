@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:06:39 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 04:04:07 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 06:58:13 by seraph           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,26 @@ Cure::Cure() : AMateria("cure")
 {
     // std::cout << "Default Cure Constuctor Called\n";
 }
+
+Cure::Cure(std::string name)
+{
+    Type = "cure";
+}
+
+Cure::Cure(Cure const &copy)
+{
+    if (this != &copy)
+    {
+        this->Type = copy.getType();
+    }
+}
+
+Cure &Cure::operator=(Cure const &copy)
+{
+    this->Type = copy.getType();
+    return *this;
+}
+
 
 Cure* Cure::clone() const
 {

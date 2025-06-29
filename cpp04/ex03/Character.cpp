@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 20:12:46 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 04:25:15 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 06:51:41 by seraph           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,30 @@ void Character::unequip(int idx)
         materias[idx] = NULL;
     }
 }
+
+Character::Character(const Character &copy)
+{
+    if (this != &copy)
+    {
+        this->Name = copy.getName();
+        for (int i = 0; i < 4; i++)
+        {
+            if (copy.materias[i])
+            {
+                this->materias[i] = copy.materias[i];
+            }
+        }
+    }
+}
+
+Character &Character::operator=(Character const &copy)
+{
+    this->Name = copy.getName();
+    for (int i = 0; i < 4; i++)
+        this->materias[i] = copy.materias[i];
+    return *this;
+}
+
 
 void Character::use(int idx, ICharacter& target)
 {

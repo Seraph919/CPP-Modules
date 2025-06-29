@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:22:57 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 04:05:38 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 06:50:14 by seraph           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ class Character : public ICharacter
 {
 private:
     std::string Name;
+protected:
     AMateria *materias[4];
 public :
     Character(std::string name);
+    Character(const Character &copy);
+    Character &operator=(Character const &copy);
     std::string const & getName() const;
     void equip(AMateria* m);
     void unequip(int idx);

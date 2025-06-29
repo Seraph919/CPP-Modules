@@ -18,6 +18,22 @@ void MateriaSource::learnMateria(AMateria* m)
     }
 }
 
+MateriaSource::MateriaSource(const MateriaSource &copy)
+{
+    for (int i = 0; i < 4; i++)
+        this->materias[i] = copy.materias[i];
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
+{
+    if (this != &copy)
+    {
+        for (int i = 0; i < 4; i++)
+            this->materias[i] = copy.materias[i];
+    }
+    return *this;
+}
+
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     for (int i = 0;materias[i]; i++)

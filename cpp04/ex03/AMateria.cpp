@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:16:36 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 03:53:09 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 06:38:10 by seraph           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ std::string const &AMateria::getType() const
 void AMateria::use(ICharacter& target)
 {
     std::cout << "Materia used on " << target.getName() << "\n";
+}
+
+AMateria::AMateria(const AMateria &copy)
+{
+    this->Type = copy.Type;
 }
 
 AMateria* AMateria::clone() const

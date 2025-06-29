@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:11:49 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/28 03:55:32 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 06:59:49 by seraph           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,25 @@ Ice* Ice::clone() const
 std::string const &Ice::getType() const
 {
     return this->Type;
+}
+
+Ice::Ice(std::string name)
+{
+    Type = "ice";
+}
+
+Ice::Ice(Ice const &copy)
+{
+    if (this != &copy)
+    {
+        this->Type = copy.getType();
+    }
+}
+
+Ice &Ice::operator=(Ice const &copy)
+{
+    this->Type = copy.getType();
+    return *this;
 }
 
 void Ice::use(ICharacter& target)

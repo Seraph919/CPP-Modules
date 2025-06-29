@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph <seraph@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:32 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/27 20:09:27 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/28 06:37:53 by seraph           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 public:
     AMateria();
     AMateria(std::string const & type);
-
+    AMateria(const AMateria &copy);
     std::string const & getType() const; 
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
