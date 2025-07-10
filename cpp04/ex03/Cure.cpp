@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:06:39 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/29 02:46:06 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/06/29 05:25:55 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,5 @@ void Cure::use(ICharacter& target)
 
 Cure::~Cure()
 {
-
     // std::cout << "Cure Destructor Called\n";
 }

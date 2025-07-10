@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:09:01 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/19 16:50:14 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/09 17:34:24 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,13 +95,13 @@ int Fixed::toInt( void ) const
 	return (this->raw >> this->fractionalBits);
 }
 
+Fixed::~Fixed()
+{
+	std::cout << "Destructor is Called\n";
+}
+
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
 	os << fixed.toFloat();
 	return (os);
-}
-
-Fixed::~Fixed()
-{
-	std::cout << "Destructor is Called\n";
 }

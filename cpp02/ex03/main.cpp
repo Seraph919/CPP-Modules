@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helpers.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 17:18:52 by asoudani          #+#    #+#             */
-/*   Updated: 2025/07/01 18:58:06 by asoudani         ###   ########.fr       */
+/*   Created: 2025/06/15 17:09:31 by asoudani          #+#    #+#             */
+/*   Updated: 2025/07/10 09:53:38 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HELPERS_HPP
-#define HELPERS_HPP
-
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
-// #include <cstdlib>
-
-std::string getString(std::string prompt);
-std::string completName(std::string line);
-std::string spaces(std::string line);
+#include "Fixed.hpp"
+#include "Point.hpp"
 
 
-#endif
+int main( void ) 
+{
+    Point a(2.0f, 0);
+    Point b(9.0f, 8.0f);
+    Point c(12.0f, 0);
+    Point point(3.5f, 8.0f);
+    
+    std::cout << bsp(a, b, c, point);
+}

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 09:24:11 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/05 10:02:38 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:34:54 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Harl{
 private:
     void debug( void );
     void info( void );
-    void warning( void );
+    void warning( void ); 
     void error( void );
 public:
     void complain( std::string level );

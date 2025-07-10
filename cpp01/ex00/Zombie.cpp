@@ -6,13 +6,13 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:46:32 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/16 17:45:14 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/02 20:38:24 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie() : name("default")
 {
     std::cout << "Zombie class has been created\n";
 }
@@ -23,7 +23,7 @@ Zombie::Zombie(std::string _name) : name(_name)
 }
 
 void Zombie::announce( void ){
-    std::cout << Zombie::name << " : BraiiiiiiinnnzzzZ...\n";
+    std::cout << Zombie::name << ": BraiiiiiiinnnzzzZ...\n";
 }
 
 void Zombie::set_name(std::string _name)

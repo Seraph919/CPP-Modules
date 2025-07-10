@@ -6,14 +6,14 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:17:58 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/02 17:18:33 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/01 18:58:06 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
-#include "contact.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-std::string get_string(std::string prompt)
+std::string getString(std::string prompt)
 {
     std::string line;
 
@@ -21,6 +21,11 @@ std::string get_string(std::string prompt)
     {
         std::cout << prompt;
         getline(std::cin, line);
+        if (std::cin.eof())
+        {
+             std::cin.clear();
+             break;
+        }
     }
     return line;
 }

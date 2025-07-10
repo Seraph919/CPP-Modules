@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:30:09 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:39:32 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/01 18:19:14 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void Account::_displayTimestamp()
 {
     time_t now = time(0);
     tm* localTime = localtime(&now);
-
+    
     std::cout << "[" <<(1900 + localTime->tm_year)
         << std::setfill('0') << std::setw(2) << (localTime->tm_mon + 1)
         << std::setfill('0') << std::setw(2) << localTime->tm_mday 

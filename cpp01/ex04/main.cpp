@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:33:17 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/17 15:43:17 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/03 02:26:40 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int main(int ac, char **av)
     if (ac != 4){
         return (Error());
     }
-
+    if (std::string(av[2]).empty() == true)
+        return std::cout << "Please provide a valid argument\n", 1;
+    
     std::string filename = av[1];
     filename.append(".replace");
 
@@ -41,8 +43,7 @@ int main(int ac, char **av)
     std::stringstream buffer;
     buffer << file.rdbuf();    
     std::string lines = buffer.str();
-
-
+    // std::cout << lines;
 
     std::ofstream returned(filename.c_str());
     
@@ -55,7 +56,6 @@ int main(int ac, char **av)
         lines.erase(pos, keyword.length());
         for (size_t i = 0; i < replace_keyword.length(); i++)
             lines.insert(pos++, 1, av[3][i]);
-            
     }
     // std::cout << lines << std::endl;
     returned << lines;

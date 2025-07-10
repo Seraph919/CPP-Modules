@@ -1,9 +1,9 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = phonebook
-
-SRC = main.cpp Contact.cpp PhoneBook.cpp helpers.cpp 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+SRC = main.cpp Fixed.cpp bsp.cpp Point.cpp
+NAME = Fixed
 OBJ = $(SRC:.cpp=.o)
+
 
 all : $(NAME)
 
@@ -18,5 +18,3 @@ fclean : clean
 
 re : fclean all
 
-test : re
-	clear && ./phonebook
