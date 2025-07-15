@@ -21,8 +21,8 @@ class ScavTrap : public ClapTrap
 public:
     ScavTrap();
     ScavTrap(std::string name);
-    ScavTrap &operator=(ScavTrap &other);
-    ScavTrap(ScavTrap &other);
+    ScavTrap &operator=(const ScavTrap &other);
+    ScavTrap(const ScavTrap &other);
     void attack(std::string target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

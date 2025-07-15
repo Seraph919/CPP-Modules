@@ -18,14 +18,14 @@ ClapTrap::ClapTrap() : Name("Default"), HitPoints(10), EnergyPoints(10), TakeDam
     std::cout << "ClapTrap default constructor has been called\n";
 }
 
-ClapTrap::ClapTrap(std::string name, unsigned int hp, unsigned int ep, unsigned int td)
-{
-    std::cout << "default constructor has been called\n";
-    Name = name;
-    HitPoints = hp;
-    EnergyPoints = ep;
-    TakeDamage = td;
-}
+// ClapTrap::ClapTrap(std::string name, unsigned int hp, unsigned int ep, unsigned int td)
+// {
+//     std::cout << "default constructor has been called\n";
+//     Name = name;
+//     HitPoints = hp;
+//     EnergyPoints = ep;
+//     TakeDamage = td;
+// }
 
 ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(10), EnergyPoints(10), TakeDamage(0)
 {
@@ -34,10 +34,8 @@ ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(10), EnergyPoints(1
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-        this->EnergyPoints = other.EnergyPoints;
-        this->HitPoints = other.HitPoints;
-        this->Name = other.Name;
-        this->TakeDamage = other.TakeDamage;
+    *this = other;
+    std::cout << "ClapTrap copy constructor has been called\n";
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -54,7 +52,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (HitPoints > 0&& HitPoints <= 10)
+    if (HitPoints > 0 && HitPoints <= 10)
     {
         std::cout << "ClapTrap " << this->Name << " has taken "<< amount 
         << " damage! " << std::endl;
@@ -93,14 +91,15 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 
 
-ClapTrap& ClapTrap::operator=(ClapTrap &other)
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
-    std::cout << "copy constructor has been called\n";
     if (this != &other)
     {
         this->EnergyPoints = other.EnergyPoints;
         this->HitPoints = other.HitPoints;
+        this->TakeDamage = other.TakeDamage;
         this->Name = other.Name;
+        std::cout << "copy constructor has been called\n";
     }
     return *this;
 }

@@ -12,9 +12,19 @@
 
 #include "ScavTrap.hpp"
 
-// ScavTrap::ScavTrap()
-// {
-// }
+ScavTrap::ScavTrap()
+{
+    setName("Default");
+    setEnergyPoint(50);
+    setHitPoint(100);
+    setTakeDamage(20);
+
+    std::cout << "ScavTrap default constructor has been called\n";
+    std::cout << "ScavTrap " << getName() << " has been created with:\n"
+              << getHitPoints() << " Hit Points, \n"
+              << getEnergyPoints() << " Energy Points,\n"
+              << getTakeDamage() << " Take Damage points." << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name)
 {
@@ -30,14 +40,14 @@ ScavTrap::ScavTrap(std::string name)
               << getTakeDamage() << " Take Damage points." << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(ScavTrap &other)
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
     if (this != &other)
         ClapTrap::operator=(other);
     return *this;
 }
 
-ScavTrap::ScavTrap(ScavTrap &other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
     std::cout << "ScavTrap copy constructor has been called\n";
 }

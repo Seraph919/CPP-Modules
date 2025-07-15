@@ -26,13 +26,14 @@ ScavTrap::ScavTrap()
               << getTakeDamage() << " Take Damage points." << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(ScavTrap &other)
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-    if (this != &other)
-        ClapTrap::operator=(other);
+    
+    ClapTrap::operator=(other);
+    std::cout << "ScavTrap copy constructor has been called\n";
     return *this;
 }
-ScavTrap::ScavTrap(ScavTrap &other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
     std::cout << "ScavTrap copy constructor has been called\n";
 }

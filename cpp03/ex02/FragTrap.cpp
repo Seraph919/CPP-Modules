@@ -10,7 +10,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30)
     std::cout << "FragTrap constructor has been called\n";
 }
 
-FragTrap::FragTrap(FragTrap &other) : ClapTrap(other)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
     
 }
