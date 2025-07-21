@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:29 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:35:03 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:35:02 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 class WrongAnimal
 {
 private:
-    string Type;
+    std::string Type;
 public:
     WrongAnimal();
-    WrongAnimal(string _Type);
-    WrongAnimal(WrongAnimal &copy);
+    WrongAnimal(std::string _Type);
+    WrongAnimal(const WrongAnimal &copy);
     WrongAnimal &operator=(const WrongAnimal &other);
-    void setType(string _Type);
-    string getType() const;
+    void setType(std::string _Type);
+    std::string getType() const;
     void makeSound() const;
-    ~WrongAnimal();
+    virtual ~WrongAnimal();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:33 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:33:52 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:52:15 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-    std::cout << getType() << " Default constructor called\n";
+    std::cout << getType() << " Defaulzt constructor called\n";
 }
 //! i forgot to add ; in the end of the class def.. and the stupid compiler says that constructor doesnt have a return value!!
-WrongCat::WrongCat(WrongCat &other) : WrongAnimal(other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
     std::cout << getType() << " Copy constructor called\n";
 }

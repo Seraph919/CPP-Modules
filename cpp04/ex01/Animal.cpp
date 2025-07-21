@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:42 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:34:02 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:43:31 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Animal::Animal() : Type("Animal")
 {
-    std::cout <<  Type << " default constructor called\n";
+    std::cout <<  "Animal default constructor called\n";
 }
 
-Animal::Animal(string _Type) : Type(_Type)
+Animal::Animal(std::string _Type) : Type(_Type)
 {
-    std::cout <<  Type << " Paramitrized constructor called\n";
+    std::cout <<  "Animal Paramitrized constructor called\n";
 }
 
-Animal::Animal(Animal &copy)
+Animal::Animal(const Animal &copy)
 {
     this->Type = copy.Type;
-    std::cout << Type << " Copy constructor called\n";
+    std::cout << "Animal Copy constructor called\n";
 }
 
 Animal &Animal::operator=(const Animal &other)
@@ -33,27 +33,27 @@ Animal &Animal::operator=(const Animal &other)
     if (this != &other)
     {
         this->Type = other.Type;
-        std::cout << Type << " Assignment operator called\n";
+        std::cout << "Animal Assignment operator called\n";
     }
     return *this;
 }
 
 void Animal::makeSound() const
 {
-    std::cout << Type << " Sound\n";
+    std::cout << "Animal Sound\n";
 }
 
-void Animal::setType(string _Type)
+void Animal::setType(std::string _Type)
 {
     Type = _Type;
 }
 
-string Animal::getType() const
+std::string Animal::getType() const
 {
     return (Type);
 }
 
 Animal::~Animal()
 {
-    std::cout <<  Type << " Distructor called\n";
+    std::cout <<  "Animal Distructor called\n";
 }

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:08 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:35:03 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:34:52 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
  
 class Cat : public Animal
 {
-private:
-
 public:
     Cat();
     Cat& operator=(const Cat &other);
-    Cat(Cat &other);
+    Cat(const Cat &other);
     void makeSound() const;
     ~Cat();
 };

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:17 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:35:03 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:02:05 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
     Dog();
     Dog& operator=(const Dog &other);
-    Dog(Dog &other);
+    Dog(const Dog &other);
     void makeSound() const;
     virtual ~Dog();
 };

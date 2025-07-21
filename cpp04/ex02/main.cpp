@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:21 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:34:25 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:08:39 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int main()
         i->makeSound(); //will output the cat sound!
         j->makeSound();
         // meta->makeSound();
+        delete(j);
+        delete(i);
     }
     return 0;
 }

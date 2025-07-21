@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:10:16 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:35:03 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:34:56 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@
  
 class Dog : public Animal
 {
-private:
-
 public:
     Dog();
     Dog& operator=(const Dog &other);
-    Dog(Dog &other);
+    Dog(const Dog &other);
     void makeSound() const;
     ~Dog();
 };

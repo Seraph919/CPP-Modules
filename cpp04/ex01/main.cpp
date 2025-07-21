@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:11:40 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:11:41 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 21:59:30 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,30 @@
 
 int main()
 {
+    Cat basic;
+    {
+        Cat tmp = basic;
+    }
+    {
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;
+    delete i;
+    }
+    
+    {
+    Cat *a= new Cat();
+    Cat *aa= new Cat();
+    *aa = *a;
+    delete aa;
+    delete a;
+    }
+
     Animal **AnimalObjects = new Animal*[100];
 
     for (int i = 0; i < 50; i++)
         AnimalObjects[i] = new Dog();
-    
+
     for (int i = 50; i < 100; i++)
         AnimalObjects[i] = new Cat();
 
@@ -30,6 +49,6 @@ int main()
         delete AnimalObjects[i];
 
     delete [] AnimalObjects;
-
+    
     return 0;
 }

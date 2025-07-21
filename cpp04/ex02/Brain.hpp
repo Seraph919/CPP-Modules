@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:12:00 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/15 17:12:01 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:08:09 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@
 
 class Brain
 {
-private:
 public:
-    string *ideas;
+    std::string ideas[100];
     Brain();
-    Brain(Brain &copy);
+    Brain(const Brain &copy);
     Brain &operator=(const Brain &copy);
     virtual ~Brain();
 };

@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:11:47 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:34:25 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 22:03:36 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Animal::Animal() : Type("Animal")
     std::cout <<  Type << " default constructor called\n";
 }
 
-Animal::Animal(string _Type) : Type(_Type)
+Animal::Animal(std::string _Type) : Type(_Type)
 {
     std::cout <<  Type << " Paramitrized constructor called\n";
 }
 
-Animal::Animal(Animal &copy)
+Animal::Animal(const Animal &copy)
 {
     this->Type = copy.Type;
     std::cout << Type << " Copy constructor called\n";
@@ -43,12 +43,12 @@ void Animal::makeSound() const
     std::cout << Type << " Sound\n";
 }
 
-void Animal::setType(string _Type)
+void Animal::setType(std::string _Type)
 {
     Type = _Type;
 }
 
-string Animal::getType() const
+std::string Animal::getType() const
 {
     return (Type);
 }

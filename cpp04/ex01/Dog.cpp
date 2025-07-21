@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 17:11:33 by asoudani          #+#    #+#             */
-/*   Updated: 2025/06/26 14:34:25 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/20 21:53:52 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,36 @@
 Dog::Dog() : Animal("Dog")
 {
     brain = new Brain();
-    std::cout << getType() << " Default constructor called\n";
+    std::cout << "Dog Default constructor called\n";
 }
 
-Dog::Dog(Dog &other) : Animal(other)
+Dog::Dog(const Dog &other)
 {
-    std::cout << getType() << " Copy constructor called\n";
+    std::cout << "Dog Copy constructor called\n";
+    this->brain = NULL;
+    *this = other;
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
     if (this != &other)
     {
-        Animal::operator=(other);
-        std::cout << getType() << " Assignment operator called\n";
+        this->Type = other.Type;
+        if (this->brain)
+            delete this->brain;
+        this->brain = new Brain(*(other.brain));
+        std::cout << "Dog Assignment operator called\n";
     }
     return *this;
 }
 
 void Dog::makeSound() const
 {
-    std::cout << "The " << getType() << " is Barking!\n";
+    std::cout << "The Dog is Barking!\n";
 }
 
 Dog::~Dog()
 {
     delete brain;
-    std::cout << getType() << "  distructor called\n";
+    std::cout << "Dog distructor called\n";
 }
