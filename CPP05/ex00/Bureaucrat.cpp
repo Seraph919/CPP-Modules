@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 00:17:28 by seraph919         #+#    #+#             */
-/*   Updated: 2025/07/29 16:57:38 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/29 20:27:45 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ Bureaucrat::Bureaucrat() : name("default"), grade(150)
 
 Bureaucrat::Bureaucrat(STR Name, int Grade) : name(Name), grade(Grade)
 {
-    // paramitrized const
+    if (grade > 150)
+		throw GradeTooLowException();
+	else if (grade < 1)
+		throw GradeTooHighException();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &cp)
@@ -77,4 +80,9 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
     os << obj.getName() << " bureaucrat grade " << obj.getGrade() << " .";
     return os;
+}
+
+Bureaucrat::~Bureaucrat()
+{
+	
 }

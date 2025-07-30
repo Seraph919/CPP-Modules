@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 00:07:04 by seraph919         #+#    #+#             */
-/*   Updated: 2025/07/29 16:49:06 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:54:57 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
     Bureaucrat();
     Bureaucrat(STR name, int grade);
 	Bureaucrat(const Bureaucrat &cp);
+	~Bureaucrat();
 	Bureaucrat &operator=(const Bureaucrat &cp);
 
 	class GradeTooHighException : public std::exception
