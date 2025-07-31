@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph919 <seraph919@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 00:07:04 by seraph919         #+#    #+#             */
-/*   Updated: 2025/07/29 18:54:57 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/30 03:57:11 by seraph919        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 // The throw() specification means the function promises not to throw exceptions
 
 #include <iostream>
+
+class Form;
 
 typedef std::string STR;
 
@@ -41,6 +43,8 @@ public:
     const int &getGrade() const;
     void incrementGrade();
     void decrementGrade();
+	
+	void beSigned(const Form &f);
     
 };
 

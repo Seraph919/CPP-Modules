@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seraph919 <seraph919@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 00:17:28 by seraph919         #+#    #+#             */
-/*   Updated: 2025/07/29 20:27:37 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/07/30 05:20:32 by seraph919        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,12 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
     os << obj.getName() << " bureaucrat grade " << obj.getGrade() << " .";
     return os;
 }
+
+void Bureaucrat::beSigned(const Form &f)
+{
+    
+}
+
 
 Bureaucrat::~Bureaucrat()
 {
