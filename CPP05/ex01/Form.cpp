@@ -4,13 +4,18 @@
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seraph919 <seraph919@student.42.fr>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                +#+#+#+#+#+   +#+          f */
 /*   Created: 2025/07/29 16:59:46 by asoudani          #+#    #+#             */
-/*   Updated: 2025/07/30 05:22:07 by seraph919        ###   ########.fr       */
+/*   Updated: 2025/07/31 11:22:52 by seraph919        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+	// const STR 	Name;
+	// bool		Signed;
+	// const int	grade;
+	// const int	execGrade;	
 
 Form::Form() : Name("default"), grade(150), execGrade(150)
 {
@@ -26,7 +31,7 @@ Form::Form(const STR &name, const int &Grade, const int &ExecGrade) : Name(name)
 		throw GradeTooHighException();
 }
 
-Form::Form(const Form &cp) : grade(cp.grade), Name(cp.Name), execGrade(cp.execGrade)
+Form::Form(const Form &cp) : Name(cp.Name), grade(cp.grade), execGrade(cp.execGrade)
 {
 	Signed = false;
 }
@@ -66,8 +71,7 @@ void Form::setSigned(bool sign)
 	Signed = sign;	
 }
 
-
-void	Form::signForm(const Bureaucrat &b)
+void	Form::beSigned(const Bureaucrat& b)
 {
 	if ((b.getGrade() >= 1  && b.getGrade() <= 150) || Signed)
 		return std::cout << b.getName() << " signed "<< this->getName() << std::endl, (void)0;

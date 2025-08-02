@@ -1,6 +1,6 @@
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = Bureaucrat.cpp main.cpp Form.cpp
+SRC = Bureaucrat.cpp main.cpp 
 NAME = Bureaucrat
 
 all: $(NAME)
