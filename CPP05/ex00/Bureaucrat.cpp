@@ -12,17 +12,19 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("default"), grade(150)
+Bureaucrat::Bureaucrat()
 {
-    // default const
+    throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(STR Name, int Grade) : name(Name), grade(Grade)
+Bureaucrat::Bureaucrat(STR Name, int Grade) : name(Name)
 {
     if (grade > 150)
 		throw GradeTooLowException();
 	else if (grade < 1)
 		throw GradeTooHighException();
+    else
+        grade = Grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &cp)
@@ -82,7 +84,5 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
     return os;
 }
 
-Bureaucrat::~Bureaucrat()
-{
-	
+Bureaucrat::~Bureaucrat(){
 }

@@ -11,35 +11,29 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat s("ayoub", 1);
-		std::cout << "the Bureaucrat: \n" <<s << '\n';
-		std::cout << "trying to decrement the Grade\n";
-        s.decrementGrade();
-		std::cout << s << '\n';
-		std::cout << "SUCCESS\n";
+        Bureaucrat b("luffy", 150);
+        Form f("marineford", 40, 30);
 
-		std::cout << "trying to increment the Grade\n";
-        s.incrementGrade();
-		std::cout << s << '\n';
-		std::cout << "SUCCESS\n";
+        std::cout << b << std::endl;
+        std::cout << f << std::endl;
 
-		std::cout << "trying to increment the Grade\n";
-		s.incrementGrade();
-		std::cout << s << '\n';
-		std::cout << "SUCCESS\n";
-		
-		std::cout << "trying to decrement the Grade\n";
-		s.decrementGrade();
-		std::cout << s << '\n';
-		std::cout << "SUCCESS\n";
+        b.signForm(f);
+
+        Bureaucrat b2("sabo", 30);
+        b2.signForm(f);
+
+        std::cout << f << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << "Exeption cought: "<< e.what()<<std::endl;
+        std::cerr << "Exception: " << e.what() << std::endl;
+		return 1;
     }
+    return 0;
 }

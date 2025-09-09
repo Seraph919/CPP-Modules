@@ -84,17 +84,24 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
     return os;
 }
 
+
+	// if (this->_Grade <= form.getReqGradeToSign())
+	// 	std::cout << this->_Name << " sings " << form.getName() << std::endl;
+	// else
+	// 	std::cout << this->_Name << " cannot sign " << form.getName() << " because The form need garde "
+	// 		<< form.getReqGradeToSign() << " to be signed" << std::endl;
+
 void Bureaucrat::signForm(Form& form)
 {
     try
     {
         form.beSigned(*this);
-        std::cout << this->name << " signed " << form.getName() << std::endl;
+		std::cout << name << " sings " << form.getName() << std::endl;
     }
-    catch (const std::exception& e)
+    catch (std::exception &e)
     {
-        std::cout << this->name << " couldn't sign " << form.getName()
-        << " because " << e.what() << std::endl;
+		std::cout << name << " cannot sign " << form.getName() << " because "
+			<< e.what() << std::endl;
     }
 }
 
