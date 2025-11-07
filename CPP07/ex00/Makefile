@@ -1,6 +1,6 @@
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror
-SRC = Whatever.cpp main.cpp
+SRC = main.cpp
 NAME = converted
 
 all: $(NAME)
