@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/09 13:15:54 by asoudani          #+#    #+#             */
+/*   Updated: 2025/11/09 18:42:02 by asoudani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 //     ShrubberyCreationForm();
@@ -11,12 +23,13 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137){}
 ShrubberyCreationForm::ShrubberyCreationForm(std::string Target) : AForm("ShrubberyCreationForm", 145, 137), target(Target){}
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy){
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm(copy){
     target = copy.target;
 }
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src){
     if (this != &src)
     {
+        AForm::operator=(src);
         target = src.target;
     }
     return *this;

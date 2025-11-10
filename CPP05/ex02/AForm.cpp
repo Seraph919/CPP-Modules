@@ -18,9 +18,8 @@
 	// const int	execGrade;	
 
 
-AForm::AForm(): grade(151), execGrade(0)
+AForm::AForm(): Name("default"), Signed(false), grade(150), execGrade(150)
 {
-	throw GradeTooLowException();
 }
 
 AForm::AForm(const STR &name, const int &Grade, const int &ExecGrade) : Name(name), grade(Grade), execGrade(ExecGrade)
@@ -104,12 +103,8 @@ AForm::~AForm()
 
 std::ostream &operator<<(std::ostream &os, const AForm &f)
 {
-	os << "AForm attributes:\nName: "<< f.getName() << "\nGrade: "
-	<< f.getGrade() << "\nexecution Grade: " << f.getExecGrade()
-	<< "\nStatus: ";
-	if (f.getStatus() == true)
-		std::cout << "is signed\n";
-	else
-		std::cout << "is not signed\n";
+	os << "AForm attributes:\nName: "<< f.getName() << "\nGrade to sign: "
+	<< f.getGrade() << "\nGrade to execute: " << f.getExecGrade()
+	<< "\nStatus: " << (f.getStatus() ? "is signed" : "is not signed");
 	return os;
 }

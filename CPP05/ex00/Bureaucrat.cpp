@@ -6,25 +6,23 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 00:17:28 by seraph919         #+#    #+#             */
-/*   Updated: 2025/07/29 20:27:45 by asoudani         ###   ########.fr       */
+/*   Updated: 2025/11/09 18:36:18 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : name("default"), grade(150)
 {
-    throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(STR Name, int Grade) : name(Name)
 {
-    if (grade > 150)
+    if (Grade > 150)
 		throw GradeTooLowException();
-	else if (grade < 1)
+	else if (Grade < 1)
 		throw GradeTooHighException();
-    else
-        grade = Grade;
+    grade = Grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &cp)
