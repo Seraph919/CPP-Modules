@@ -1,12 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 13:20:05 by asoudani          #+#    #+#             */
-/*   Updated: 2025/11/09 13:20:06 by asoudani         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "easyfind.hpp"
 
+int main()
+{
+    std::vector<int> a;
+    for (int i = 0; i < 12; i++)
+    {
+        int x = rand() % 100;
+        std::cout << "value : " << x << '\n';
+        a.push_back(x);
+    }
+    try {
+        std::vector<int>::iterator it = easyfind(a, 77);
+        std::cout << "the value " << *it << " found" << std::endl;
+        (void) it;
+    }catch(std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+}
