@@ -2,6 +2,20 @@
 
 PmergeMe::PmergeMe(){}
 
+std::deque<size_t> generateJacobsthal(size_t n)
+{
+    std::deque<size_t> jacobsthal;
+    jacobsthal.push_back(1);
+    jacobsthal.push_back(3);
+
+    while (jacobsthal.back() < n)
+    {
+        size_t next = jacobsthal.back() + 2 * jacobsthal[jacobsthal.size() - 2];
+        jacobsthal.push_back(next);
+    }
+    return jacobsthal;
+}
+
 std::deque<std::string> splitString(const std::string& str, const std::string& delimiter) {
     std::deque<std::string> tokens;
     size_t prev = 0;

@@ -10,19 +10,7 @@
 #include <stdexcept>
 #include "helpers.hpp"
 
-std::deque<size_t> generateJacobsthal(size_t n)
-{
-    std::deque<size_t> jacobsthal;
-    jacobsthal.push_back(1);
-    jacobsthal.push_back(3);
-
-    while (jacobsthal.back() < n)
-    {
-        size_t next = jacobsthal.back() + 2 * jacobsthal[jacobsthal.size() - 2];
-        jacobsthal.push_back(next);
-    }
-    return jacobsthal;
-}
+std::deque<size_t> generateJacobsthal(size_t n);
 
 template <typename Container>
 void mergeInsertionSortImpl(Container& container)
