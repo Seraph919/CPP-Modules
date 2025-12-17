@@ -2,6 +2,25 @@
 
 PmergeMe::PmergeMe(){}
 
+std::deque<std::string> splitString(const std::string& str, const std::string& delimiter) {
+    std::deque<std::string> tokens;
+    size_t prev = 0;
+    size_t current = str.find(delimiter);
+    while (current != std::string::npos) {
+        std::string token = str.substr(prev, current - prev);
+        if (!token.empty())
+        {
+            tokens.push_back(token);
+        }
+        prev = current + delimiter.length();
+        current = str.find(delimiter, prev);
+    }
+    std::string token = str.substr(prev, std::string::npos);
+    if (!token.empty())
+        tokens.push_back(token);
+    return tokens;
+}
+
 void PmergeMe::application()
 {
     std::cout << "before: ";
@@ -12,6 +31,8 @@ void PmergeMe::application()
             std::cout << ' ';
     }
     std::cout << '\n';
+    sortsFordJohnson(deq);
+    // sortsFordJohnson(list);
     std::cout << "after: ";
     for (size_t i = 0; i < deq.size(); i++)
     {
@@ -34,12 +55,18 @@ PmergeMe::PmergeMe(int ac, char **av){
 
 void PmergeMe::storeInput(char *av)
 {
-    std::stringstream str(av);
-    int n;
-    str >> n;
-    deq.push_back(n);
-    list.push_back(n);
+    std::string str(av);
+    std::deque<std::string> numbers =  splitString(str, " ");
+    for (size_t i = 0; i < numbers.size(); i++)
+    {
+        int n;
+        std::stringstream sstr(numbers[i]);
+        sstr >> n; 
+        deq.push_back(n);
+        list.push_back(n);
+    }
 }
+
 void PmergeMe::processInput(int ac, char **av)
 {
     for (int i = 0; i < ac - 1; i++)
@@ -64,4 +91,4 @@ PmergeMe &PmergeMe::operator=(PmergeMe &copy){
 PmergeMe::~PmergeMe(){}
 
 
-    
+
