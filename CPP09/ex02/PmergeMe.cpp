@@ -45,16 +45,35 @@ void PmergeMe::application()
             std::cout << ' ';
     }
     std::cout << '\n';
+    
+    double start = getTimeUs();
     sortsFordJohnson(deq);
+    double end = getTimeUs();
+
+    // double start2 = getTimeUs();
     // sortsFordJohnson(list);
+    // double end2 = getTimeUs();
+    
     std::cout << "after: ";
     for (size_t i = 0; i < deq.size(); i++)
     {
         std::cout << deq[i];
         if (i < deq.size() - 1)
-            std::cout << ' ';
+        std::cout << ' ';
     }
     std::cout << '\n';
+    std::cout << "Time to process a range of "
+            << deq.size()
+            << " elements with std::deque : "
+            << (end - start)
+            << " us"
+            << std::endl;
+    // std::cout << "Time to process a range of "
+    //         << list.size()
+    //         << " elements with std::list : "
+    //         << (end2 - start2)
+    //         << " us"
+    //         << std::endl;
 }
 
 PmergeMe::PmergeMe(int ac, char **av){

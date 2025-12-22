@@ -1,7 +1,12 @@
 #pragma once
+
+#include <sys/time.h>
 #include <iostream>
 
 int isPositiveNumbers(char *str);
+double getTimeUs();
+
+
 
 template <typename It>
 void printContainer(It begin, It end)
