@@ -1,6 +1,9 @@
 #include "PmergeMe.hpp"
 
+extern int counter;
+
 PmergeMe::PmergeMe(){}
+
 
 std::deque<size_t> generateJacobsthal(size_t n)
 {
@@ -16,26 +19,9 @@ std::deque<size_t> generateJacobsthal(size_t n)
     return jacobsthal;
 }
 
-std::deque<std::string> splitString(const std::string& str, const std::string& delimiter) {
-    std::deque<std::string> tokens;
-    size_t prev = 0;
-    size_t current = str.find(delimiter);
-    while (current != std::string::npos) {
-        std::string token = str.substr(prev, current - prev);
-        if (!token.empty())
-        {
-            tokens.push_back(token);
-        }
-        prev = current + delimiter.length();
-        current = str.find(delimiter, prev);
-    }
-    std::string token = str.substr(prev, std::string::npos);
-    if (!token.empty())
-        tokens.push_back(token);
-    return tokens;
-}
 
-void PmergeMe::application()
+
+void PmergeMe::application() 
 {
     std::cout << "before: ";
     for (size_t i = 0; i < deq.size(); i++)
@@ -45,14 +31,14 @@ void PmergeMe::application()
             std::cout << ' ';
     }
     std::cout << '\n';
+
+    // double start2 = getTimeUs();
+    // sortsFordJohnson(vector);
+    // double end2 = getTimeUs();
     
     double start = getTimeUs();
     sortsFordJohnson(deq);
     double end = getTimeUs();
-
-    // double start2 = getTimeUs();
-    // sortsFordJohnson(list);
-    // double end2 = getTimeUs();
     
     std::cout << "after: ";
     for (size_t i = 0; i < deq.size(); i++)
@@ -69,46 +55,22 @@ void PmergeMe::application()
             << " us"
             << std::endl;
     // std::cout << "Time to process a range of "
-    //         << list.size()
-    //         << " elements with std::list : "
+    //         << vector.size()
+    //         << " elements with std::vector : "
     //         << (end2 - start2)
     //         << " us"
     //         << std::endl;
+    std::cout << "number of comparisons = " << counter << std::endl;
 }
 
-PmergeMe::PmergeMe(int ac, char **av){
-    try{
-        processInput(ac, av + 1);
-        application();
-    }catch(std::exception &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+PmergeMe::PmergeMe(std::deque<int> &deq_, std::vector<int> &vector_) {
+    deq = deq_;
+    vector = vector_;
+    application();
 }
 
-void PmergeMe::storeInput(char *av)
-{
-    std::string str(av);
-    std::deque<std::string> numbers =  splitString(str, " ");
-    for (size_t i = 0; i < numbers.size(); i++)
-    {
-        int n;
-        std::stringstream sstr(numbers[i]);
-        sstr >> n; 
-        deq.push_back(n);
-        list.push_back(n);
-    }
-}
+int PmergeMe::comparisons = 0;
 
-void PmergeMe::processInput(int ac, char **av)
-{
-    for (int i = 0; i < ac - 1; i++)
-    {
-        if (isPositiveNumbers(av[i]) == 0)
-            throw inputError();
-        storeInput(av[i]);
-    }
-}
 
 PmergeMe::PmergeMe(PmergeMe &copy){
     *this = copy;
@@ -116,12 +78,10 @@ PmergeMe::PmergeMe(PmergeMe &copy){
 PmergeMe &PmergeMe::operator=(PmergeMe &copy){
     if (this != &copy)
     {
-        this->deq = copy.deq;
-        this->list = copy.list;
+        deq = copy.deq;
+        vector = copy.vector;
     }
     return *this;
 }
 PmergeMe::~PmergeMe(){}
-
-
 
