@@ -12,10 +12,9 @@ void mergeInsertionSortImpl(Container& container)
 
     size_t n = container.size();
 
-    // Base Case: 0 or 1 element is already sorted
-    if (n < 2) return;
+    if (n < 2)
+        return;
 
-    // 1. Handle Straggler (odd element)
     bool hasStraggler = (n % 2 != 0);
     ValueType straggler;
     if (hasStraggler)
@@ -24,7 +23,6 @@ void mergeInsertionSortImpl(Container& container)
         container.pop_back();
     }
 
-    // 2. Create Pairs: compare adjacent elements and store (larger, smaller)
     std::deque<std::pair<ValueType, ValueType> > pairs;
     Container winners;
 
@@ -34,10 +32,9 @@ void mergeInsertionSortImpl(Container& container)
         ValueType a = *it;
         ValueType b = *(it + 1);
         
-        // Compare and store: first = larger (winner), second = smaller (loser)
         if (a < b)
             std::swap(a, b);
-        counter++;  // Count the comparison
+        counter++;
             
         pairs.push_back(std::make_pair(a, b));
         winners.push_back(a);
@@ -45,14 +42,11 @@ void mergeInsertionSortImpl(Container& container)
         it += 2;
     }
 
-    // 3. Recursively sort winners
     mergeInsertionSortImpl(winners);
 
-    // 4. Build main chain and pending list
     Container mainChain;
     std::deque<ValueType> pending;
 
-    // Find and add the loser of the smallest winner
     for (size_t i = 0; i < pairs.size(); ++i)
     {
         if (pairs[i].first == winners[0])
@@ -63,7 +57,6 @@ void mergeInsertionSortImpl(Container& container)
     }
     mainChain.push_back(winners[0]);
 
-    // Add remaining winners and their losers to pending
     for (size_t i = 1; i < winners.size(); ++i)
     {
         mainChain.push_back(winners[i]);
@@ -77,7 +70,6 @@ void mergeInsertionSortImpl(Container& container)
         }
     }
 
-    // 5. Insert pending elements using Jacobsthal ordering
     std::deque<size_t> jacobsthal = generateJacobsthal(pending.size());
     
     size_t pendingIdx = 0;
@@ -89,12 +81,10 @@ void mergeInsertionSortImpl(Container& container)
         if (limit > pending.size()) 
             limit = pending.size();
 
-        // Insert from limit-1 down to pendingIdx in reverse order
         for (size_t i = limit; i > pendingIdx; --i)
         {
             ValueType valToInsert = pending[i - 1];
             
-            // Find the buddy winner to determine search range
             ValueType buddyWinner;
             bool foundBuddy = false;
             
@@ -111,7 +101,6 @@ void mergeInsertionSortImpl(Container& container)
             typename Container::iterator searchEnd = mainChain.end();
             if (foundBuddy) 
             {
-                // Find position of buddy in mainChain (don't count this as a comparison)
                 for(typename Container::iterator it2 = mainChain.begin(); it2 != mainChain.end(); ++it2)
                 {
                     if(*it2 == buddyWinner) 
@@ -122,7 +111,6 @@ void mergeInsertionSortImpl(Container& container)
                 }
             }
 
-            // Binary search for insertion position (comparisons counted in binarySearch)
             typename Container::iterator insertPos = binarySearch(mainChain.begin(), searchEnd, valToInsert);
             mainChain.insert(insertPos, valToInsert);
         }
@@ -131,14 +119,12 @@ void mergeInsertionSortImpl(Container& container)
         jacobsthalIdx++;
     }
 
-    // 6. Insert straggler if present
     if (hasStraggler)
     {
         typename Container::iterator insertPos = binarySearch(mainChain.begin(), mainChain.end(), straggler);
         mainChain.insert(insertPos, straggler);
     }
 
-    // Copy sorted result back
     container = mainChain;
 }
 

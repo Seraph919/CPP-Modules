@@ -1,7 +1,6 @@
 #pragma once
 
 #include <stack>
-#include <vector>
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -15,8 +14,6 @@ class RPN{
     int multiply(int a, int b);
     int divide(int a, int b);
     void inputTreatment(char *av);
-
-    std::vector<std::string> splitString(const std::string& str, const std::string& delimiter);
     public:
     RPN(char *av);
     RPN(RPN &copy);
